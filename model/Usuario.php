@@ -27,7 +27,7 @@ class Usuario extends Banco{
     }
 
     public function setSenha($senha){
-        $this->senha = $senha;
+        $this->senha = md5($senha);
     }
 
     public function getSenha(){
@@ -126,7 +126,21 @@ class Usuario extends Banco{
 
         return $result;
     }
-
+    public function logar()
+    {
+        $conexao = new Conexao();
+        $con = $conexao->getConection();
+        $query = "SELECT * FROM usuario WHERE login = :login and senha = :senha";
+        $stmt = $con->prepare($query);
+        if ($stmt->execute(array(':login'=> $this->login, ':senha'=> $this->senha))) {
+            if ($stmt) {
+                $result = true;
+            }else {
+                $result = false;
+            }
+        }
+        return $result;
+    }
 
 }
 
