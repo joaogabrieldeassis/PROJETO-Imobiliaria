@@ -11,7 +11,7 @@
         <form name="cadUsuario" id="cadUsuario" action="" method="post">
             <div class="card" style="top:40px; width: 50%;">
                 <div class="card-header">
-                    <span class="card-title">Usuário</span>
+                    <span class="card-title">Usuários</span>
                 </div>
                 <div class="card-body">
                 </div>
