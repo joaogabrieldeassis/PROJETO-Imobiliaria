@@ -16,7 +16,7 @@
                 <div class="card-body">
                 </div>
                 <div class="form-group form-row">
-                    <label class="col-sm-2 col-form-label text-right">Logins:</label>
+                    <label class="col-sm-2 col-form-label text-right">Login:</label>
                     <input type="text" class="form-control col-sm-8" name="login" id="login" 
                     value="<?php echo isset($usuario)?$usuario->getLogin():''; ?>" />
                     <input type="hidden" name="id" id="id" 
