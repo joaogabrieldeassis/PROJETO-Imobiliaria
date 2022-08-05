@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group form-row">
                     <label class="col-sm-2 col-form-label text-right">Usuario: </label>
-                    <input type="text" class = "form-control col-sm-8 " name = "senha" id = "senha" value = ""/>
+                    <input type="text" class = "form-control col-sm-8 " name = "login" id = "login" value = ""/>
                 </div>
                 <div class="form-group form-row">
                     <label class="col-sm-2 col-form-label text-right">Senha: </label>
@@ -31,4 +31,14 @@
         </div>
     </body>
 </html>
-    
+<?php
+    //Verifica se o botão php foi adicionado
+    if (isset($_POST['btnLogar'])){
+    //Chama uma função php que permite informar a classe e o método que sera adicionado
+    $_SESSION['logado'] = call_user_func(array('UsuarioController','logar'));
+    //Armazena o usuario na SESSION
+    $_SESSION['login'] = $_POST['login']
+    //Rediriciona para a index
+    header('Location: index.php');
+}
+?>
