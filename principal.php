@@ -9,7 +9,7 @@
           <a class="nav-link" href="#">Alugar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Comprar</a>
+          <a class="nav-link" href="#">Comprar a </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?logar">
