@@ -6,7 +6,7 @@ class ImovelController{
     public static function salvar(){
 
         $imovel = new Imovel();
-        $imovel ->setId($_POST['id']);
+
         $imovel->setDescricao($_POST['descricao']);
         $imovel->setValor($_POST['valor']);
         $imovel->setTipo($_POST['tipo']);
@@ -16,9 +16,10 @@ class ImovelController{
     }
 
     public static function listar(){
-        $imovel = new Imovel();
-        return $imovel->listAll();
+        $imoveis = new Imovel();
+        return $imoveis->listAll();
     }
+
     public static function editar($id){
         $imovel = new Imovel();
 
