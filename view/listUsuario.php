@@ -14,7 +14,7 @@
         <tbody>
             <?php
             //importa o UsuarioController.php
-            require_once 'controller/UsuarioController.php';
+            require_once '../controller/UsuarioController.php';
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
             $usuarios = call_user_func(array('UsuarioController','listar'));
             //Verifica se houve algum retorno

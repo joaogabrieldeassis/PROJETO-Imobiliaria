@@ -14,7 +14,7 @@
                 <div class="form-group form-row">
                     <label class="col-sm-2 col-form-label text-right">Senha:</label>
                     <input type="password" class="form-control col-sm-8" name="senha1" id="senha1" 
-                    value="<?php echo isset($usuario)?$usuario->getSenha():'' ?>" />
+                    value="<?php echo isset($usuario)?$usuario->getSenha():'';?>" />
                 </div>
                 <div class="form-group form-row">
                     <label class="col-sm-2 col-form-label text-right">Confirmação:</label>

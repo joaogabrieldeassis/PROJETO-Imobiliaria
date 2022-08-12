@@ -1,7 +1,8 @@
 <?php
 //Chama uma função PHP que permite informar a classe e o Método que será acionado
+require_once 'controller/ImovelController.php';
 if(isset($_GET['tipo'])){
-  $imoveis = call_user_func(array('ImovelController','listarTipo'),$_GET['tipo']);
+  $imoveis = call_user_func(array('ImovelController','listar'),$_GET['tipo']);
 }else{
   $imoveis = call_user_func(array('ImovelController','listar'));
 }
