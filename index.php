@@ -4,6 +4,7 @@ session_start();
 //importa o Controllers
 require_once 'controller/UsuarioController.php';
 require_once 'controller/ImovelController.php';
+require_once 'controller/GaleriaController.php';
 //adiciona o cabeçalho
 require_once 'header.php';
 
@@ -39,7 +40,10 @@ if(isset($_SESSION['logado']) && $_SESSION['logado'] == true){
                 if($_GET['action'] == 'listar'){
                     require_once 'view/listImovel.php';
                 }
-        
+                if ($_GET['action'] == 'listGaleria') {
+                    $galeria = call_user_func(array('GaleriaController','listGaleria'), $_GET['id']);  
+                    require_once 'view/ListGaleria.php';
+                }
                 if($_GET['action'] == 'excluir'){
                     //Chama uma função PHP que permite informar a classe e o Método que será acionado
                     $imovel = call_user_func(array('ImovelController','excluir'), $_GET['id']);  

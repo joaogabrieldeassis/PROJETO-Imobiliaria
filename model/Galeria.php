@@ -2,7 +2,7 @@
 require_once 'Banco.php';
 require_once 'Conexao.php';
 
-class Imovel extends Banco{
+class Galeria extends Banco{
 
     private $id;
     private $idImovel;
@@ -69,7 +69,7 @@ class Imovel extends Banco{
         if($conn = $conexao->getConection()){
             if($this->id > 0){
                 //cria query de update passando os atributos que serão atualizados
-                $query = "UPDATE imovel SET descricao = :descricao, foto = :foto, valor = :valor, tipo = :tipo, fotoTipo = :fotoTipo, path = :path
+                $query = "UPDATE galeria SET descricao = :descricao, foto = :foto, valor = :valor, tipo = :tipo, fotoTipo = :fotoTipo, path = :path
                 WHERE id = :id";
                 //Prepara a query para execução
                 $stmt = $conn->prepare($query);
@@ -125,7 +125,7 @@ class Imovel extends Banco{
         //cria a conexao com o banco de dadosgi
         $conn = $conexao->getConection();
         //cria query de remoção
-        $query = "DELETE FROM imovel where id = :id";
+        $query = "DELETE FROM galeria where id = :id";
         //Prepara a query para execução
         $stmt = $conn->prepare($query);
         //executa a query
@@ -141,7 +141,7 @@ class Imovel extends Banco{
         //cria a conexao com o banco de dados
         $conn = $conexao->getConection();
         //cria query de seleção
-        $query = "SELECT count(*) FROM imovel";
+        $query = "SELECT count(*) FROM galeria";
         //Prepara a query para execução
         $stmt = $conn->prepare($query);
         $count = $stmt->execute();
@@ -158,7 +158,7 @@ class Imovel extends Banco{
         //cria a conexao com o banco de dados
         $conn = $conexao->getConection();
         //cria query de seleção
-        $query = "SELECT * FROM imovel";
+        $query = "SELECT * FROM galeria";
         //Prepara a query para execução
         $stmt = $conn->prepare($query);
         //Cria um array para receber o resultado da seleção
@@ -184,7 +184,7 @@ class Imovel extends Banco{
         //cria a conexao com o banco de dados
         $conn = $conexao->getConection();
         //cria query de seleção
-        $query = "SELECT * FROM imovel where tipo = :tipo";
+        $query = "SELECT * FROM galeria where tipo = :tipo";
         //Prepara a query para execução
         $stmt = $conn->prepare($query);
         //Cria um array para receber o resultado da seleção

@@ -1,0 +1,7 @@
+CREATE TABLE galeria (
+       Id INT PRIMARY KEY AUTO_INCREMENT,
+       idImovel INT(11),
+	   foto longblob,
+	   fotoTipo VARCHAR(50),
+	   path VARCHAR(100)
+);
