@@ -23,6 +23,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="index.php?page=usuario&action=listar">Usuário</a></li>
             <li><a class="dropdown-item" href="index.php?page=imovel&action=listar">Imóvel</a></li>
+            
           </ul>
         </li>
         <li class="nav-item">

@@ -1,5 +1,6 @@
 <?php
 require_once 'model/Imovel.php';
+require_once 'model/Galeria.php';
 
 class GaleriaController{
 
@@ -10,36 +11,30 @@ class GaleriaController{
         $imagem = array();
         if(is_uploaded_file($_FILES['foto']['tmp_name'])){
             $imagem['data'] = file_get_contents($_FILES['foto']['tmp_name']);
-            $imagem['tipo'] = $_FILES['foto']['type'];
             $imagem['path'] = 'imagens/'.$_FILES['foto']['name'];
             move_uploaded_file($_FILES['foto']['tmp_name'],$imagem['path']);
         }
 
         if(!empty($imagem)){
-            $imovel->setFoto($imagem['data']);
-            $imovel->setFotoTipo($imagem['tipo']);
             $imovel->setPath($imagem['path']);
 
             if(!empty($_POST['path'])){
                 unlink($_POST['path']);
             }
         }else{
-            $imovel->setFoto($fotoAtual);
-            $imovel->setFotoTipo($fotoTipo);
+            
             $imovel->setPath($imagem['path']);
         }
 
-        $imovel->setId($_POST['id']);
-        $imovel->setDescricao($_POST['descricao']);
-        $imovel->setValor($_POST['valor']);
-        $imovel->setTipo($_POST['tipo']);
+        $imovel->setIdImovel($_POST['id']);
 
         $imovel->save();
     }
 
     public static function listGaleria(){
+         $idImovel = $_GET['id'];
         $imoveis = new Galeria();
-        return $imoveis->listAll();
+        return $imoveis->listarGaleriaOne($idImovel);
     }
 
     public static function editar($id){

@@ -42,7 +42,7 @@ if(isset($_SESSION['logado']) && $_SESSION['logado'] == true){
                 }
                 if ($_GET['action'] == 'listGaleria') {
                     $galeria = call_user_func(array('GaleriaController','listGaleria'), $_GET['id']);  
-                    require_once 'view/ListGaleria.php';
+                    require_once 'view/listGaleria.php';
                 }
                 if($_GET['action'] == 'excluir'){
                     //Chama uma função PHP que permite informar a classe e o Método que será acionado

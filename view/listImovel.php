@@ -31,7 +31,7 @@ if(isset($_GET['tipo'])){
             echo '<strong>Tipo: </strong>'.$tipo.'<br>';
             echo '<a href="index.php?action=editar&id='.$imovel->getId().'&page=imovel" class="btn btn-primary btn-sm">Editar</a>&nbsp;&nbsp;&nbsp;';
             echo '<a href="index.php?action=excluir&id='.$imovel->getId().'&page=imovel" class="btn btn-danger btn-sm">Excluir</a>&nbsp;&nbsp;&nbsp;';
-            echo '<a href="index.php?action=listGaleria">Galeria</a>';
+            echo '<a href="index.php?action=listGaleria&id='.$imovel->getId().'&page=imovel">Galeria</a>';
             $cont++;
             if($cont==4)
               $cont=0;
